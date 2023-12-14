@@ -13,3 +13,6 @@
 [submodule "soh/lib/luajit/luajit"]
 	path = soh/lib/luajit/luajit
 	url = https://luajit.org/git/luajit.git
+[submodule "soh/lib/wamr/wasm-micro-runtime"]
+	path = soh/lib/wamr/wasm-micro-runtime
+	url = https://github.com/bytecodealliance/wasm-micro-runtime
