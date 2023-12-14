@@ -10,3 +10,6 @@
 [submodule "soh/lib/lua"]
 	path = soh/lib/lua
 	url = https://github.com/lua/lua
+[submodule "soh/lib/luajit/luajit"]
+	path = soh/lib/luajit/luajit
+	url = https://luajit.org/git/luajit.git

@@ -86,6 +86,11 @@ include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 ################################################################################
+# Libraries
+################################################################################
+add_subdirectory(lib)
+
+################################################################################
 # Sub-projects
 ################################################################################
 if (NOT TARGET libultraship)
@@ -128,9 +133,6 @@ source_group("include" FILES ${Header_Files__include})
 file(GLOB soh__ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "soh/*.c" "soh/*.cpp" "soh/*.h")
 source_group("soh" FILES ${soh__})
 
-file(GLOB lib__ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "lib/*/*.c")
-list(REMOVE_ITEM lib__ "lib/lua/onelua.c")
-list(REMOVE_ITEM lib__ "lib/lua/lua.c")
 source_group("lib" FILES ${lib__})
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
@@ -400,6 +402,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE assets
 	${SDL2-INCLUDE}
     ${SDL2-NET-INCLUDE}
     ${BOOST-INCLUDE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/luajit
 	${CMAKE_CURRENT_SOURCE_DIR}/assets/
 	.
 )
